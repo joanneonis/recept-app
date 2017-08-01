@@ -1,8 +1,13 @@
 
 <ul>
-  <li *ngFor="let item of items">
+	<li *ngFor="let item of items">
+		<a [routerLink]="['/recept', item.$key]">
+			<app-recept-teaser [recept]="item"></app-recept-teaser>
+		</a>
+	</li>
+  <!-- <li *ngFor="let item of items">
     <app-recept-teaser [recept]="item"></app-recept-teaser>
 
     <app-recept-full [recept]="item"></app-recept-full>
-  </li>
+  </li> -->
 </ul>
