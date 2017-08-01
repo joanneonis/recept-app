@@ -20,7 +20,7 @@
     "import-spacing": true,
     "indent": [
       true,
-      "spaces"
+      "space"
     ],
     "interface-over-type-literal": true,
     "label-position": true,

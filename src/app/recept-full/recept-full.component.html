@@ -1,9 +1,11 @@
-  <img src="{{recept.afbeeldingurl}}" alt="">
-  <h1>{{recept.titel}}</h1>
-  <span>{{recept.bereidingstijd}}</span>
-  <span>{{recept.wachttijd}}</span>
+{{item | json}}
+
+<!-- <img src="{{item.afbeeldingurl}}" alt="">
+  <h1>{{item.titel}}</h1>
+  <span>{{item.bereidingstijd}}</span>
+  <span>{{item.wachttijd}}</span>
   <ul>
-    <li *ngFor="let ingredient of recept.ingredienten">
+    <li *ngFor="let ingredient of item.ingredienten">
       <strong>{{ingredient?.naam}}</strong>
       <span>{{ingredient?.hoeveelheid}}</span>
       <span>{{ingredient?.eenheid}}</span>
@@ -11,8 +13,8 @@
   </ul>
 
   <p>
-    {{recept.bereidingswijze}}
+    {{item.bereidingswijze}}
   </p>
   <section class="meta">
-    <span class="label">{{recept.categorie}}</span>
-  </section>
+    <span class="label">{{item.categorie}}</span>
+  </section> -->

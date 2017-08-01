@@ -1,18 +1,48 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Recept } from '../interfaces/recept.model';
-
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-recept-full',
   templateUrl: './recept-full.component.html',
   styleUrls: ['./recept-full.component.css']
 })
-export class ReceptFullComponent implements OnInit {
-  @Input() recept: Recept;
+export class ReceptFullComponent implements OnInit, OnDestroy {
+	id: string;
+	private sub: any;
+	$id: Subject<string> = new Subject<string>();
 
-  constructor() { }
+	$item: FirebaseListObservable<any[]>;
+	item: Array<any>= [];
 
-  ngOnInit() {
+	constructor(private af: AngularFireDatabase, private route: ActivatedRoute) {
   }
 
+  ngOnInit() {
+
+		this.sub = this.route.params.subscribe(params => {
+			this.id = params['id'];
+			this.$id.next(this.id);
+
+			this.$item = this.af.list('/recepten', {
+      query: {
+				orderByKey: true,
+				equalTo: this.id
+      }
+		});
+
+		this.$item.subscribe(a => { this.item = a; console.log(a); });
+    });
+
+	}
+
+	ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+
+
 }
+
