@@ -17,7 +17,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 const appRoutes: Routes = [
 	{ path: 'recepten', component: ReceptListComponent },
 	{ path: 'toevoegen', component: AddReceptComponent },
-	{ path: 'recept/:id', component: ReceptFullComponent }
+	{ path: 'recept/:id', component: ReceptFullComponent },
+	{ path: 'recept/:id/bewerken', component: AddReceptComponent }
 ];
 
 @NgModule({

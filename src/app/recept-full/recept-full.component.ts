@@ -33,7 +33,7 @@ export class ReceptFullComponent implements OnInit, OnDestroy {
       }
 		});
 
-		this.$item.subscribe(a => { this.item = a; console.log(a); });
+		this.$item.subscribe(a => { this.item = a[0]; console.log(a); });
     });
 
 	}
