@@ -1,0 +1,49 @@
+
+<form (ngSubmit)="add()">
+      <div class="testnaam">
+        <label for="titel">titel:</label>
+        <input type="text" name="titel" [(ngModel)]="newItem.titel">
+      </div>
+      <div class="testnaam">
+        <label for="afbeeldingurl">afbeeldingurl:</label>
+        <input type="text" name="afbeeldingurl" [(ngModel)]="newItem.afbeeldingurl">
+      </div>
+      <div class="testnaam">
+        <label for="wachttijd">wachttijd:</label>
+        <input type="time" name="wachttijd" [(ngModel)]="newItem.wachttijd">
+      </div>
+      <div class="testnaam">
+        <label for="bereidingswijze">bereidingstijd:</label>
+        <input type="time" name="bereidingswijze" [(ngModel)]="newItem.bereidingswijze">
+      </div>
+      <div class="testnaam">
+        <label for="bereidingswijze">bereidingswijze:</label>
+        <textarea rows="5" name="bereidingswijze" [(ngModel)]="newItem.bereidingswijze"></textarea>
+      </div>
+      <div class="testnaam">
+        <h5 *ngIf="newItem.ingredienten.length > 0">test</h5>
+        <ul>
+          <div *ngFor="let ingredient of newItem.ingredienten;let index = index;trackBy:trackByIndex;">
+            <input name="ingredient {{index}}" type="text" [(ngModel)]="ingredient.naam" placeholder="test">
+            <input name="ingredient {{index}}" type="number" [(ngModel)]="ingredient.hoeveelheid" placeholder="test">
+            <select name="eenheid {{index}}" id="type" [(ngModel)]="ingredient.eenheid">
+              <option value="gram">gram</option>
+              <option value="ml">milliliter</option>
+            </select>
+          </div>
+        </ul>
+          <button type="button" (click)="addIngredient()">Voeg ingredient toe +</button>
+      </div>
+      <div class="testnaam">
+        <label for="bereidingswijze">categorie:</label>
+        <select name="type" id="type" [(ngModel)]="newItem.categorie">
+          <option value="ovenschotel">ovenschotel</option>
+          <option value="pasta">pasta</option>
+        </select>
+      </div>
+
+
+      <div class="testnaam">
+        <input type="submit" value="Add Contact">
+      </div>
+    </form>

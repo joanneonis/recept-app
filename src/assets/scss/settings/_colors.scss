@@ -1,0 +1,81 @@
+/**
+ * Color settings
+ * [1] Styleguide colors
+ * [2] Font colors
+ * [3] Social colors
+ */
+
+/**
+ * Color key base variable
+ */
+$color-key: 500;
+
+/**
+ * Color pallette
+ */
+$colors: (
+    black: (
+        500: #000
+    ),
+    white: (
+        500: #fff
+    ),
+    grey: (
+        200: #f3f3f3,
+        300: #dfdddd,
+        400: #d2d3d2,
+        500: #aeafad,
+        600: #747474,
+        700: #4a4949
+    ),
+    red: (
+        500: #de4444
+    )
+);
+
+/**
+ * Font color pallette
+ */
+$font-colors: (
+    dark: (
+        base: #000,
+        primary: 1,
+        secondary: .75,
+        hint: .45,
+        dividers: .15
+    ),
+    light: (
+        base: #fff,
+        primary: 1,
+        secondary: .65,
+        hint: .4,
+        dividers: .15
+    )
+);
+
+/**
+ * Social color pallette
+ */
+$social: (
+    facebook: (
+        base: #5172ab
+    ),
+    twitter: (
+        base: #00b7ee
+    ),
+    google: (
+        base: #e1453b
+    ),
+    linkedin: (
+        base: #0077b5
+    ),
+    mail: (
+        base: #4b606c
+    ),
+    youtube: (
+        base: #b31217
+    ),
+    whatsapp: (
+        base: #25d366
+    )
+);

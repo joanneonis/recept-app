@@ -2,15 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { TodolistComponent } from './todolist/todolist.component';
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
+import { AddReceptComponent } from './add-recept/add-recept.component';
+import { ReceptTeaserComponent } from './recept-teaser/recept-teaser.component';
+import { ReceptListComponent } from './recept-list/recept-list.component';
+import { ReceptFullComponent } from './recept-full/recept-full.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodolistComponent,
+    AddReceptComponent,
+    ReceptTeaserComponent,
+    ReceptListComponent,
+    ReceptFullComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+		AngularFireDatabaseModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
+
 export class AppModule { }
+

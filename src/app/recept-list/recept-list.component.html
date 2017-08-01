@@ -1,0 +1,8 @@
+
+<ul>
+  <li *ngFor="let item of items">
+    <app-recept-teaser [recept]="item"></app-recept-teaser>
+
+    <app-recept-full [recept]="item"></app-recept-full>
+  </li>
+</ul>

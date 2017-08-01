@@ -1,0 +1,18 @@
+  <img src="{{recept.afbeeldingurl}}" alt="">
+  <h1>{{recept.titel}}</h1>
+  <span>{{recept.bereidingstijd}}</span>
+  <span>{{recept.wachttijd}}</span>
+  <ul>
+    <li *ngFor="let ingredient of recept.ingredienten">
+      <strong>{{ingredient?.naam}}</strong>
+      <span>{{ingredient?.hoeveelheid}}</span>
+      <span>{{ingredient?.eenheid}}</span>
+    </li>
+  </ul>
+
+  <p>
+    {{recept.bereidingswijze}}
+  </p>
+  <section class="meta">
+    <span class="label">{{recept.categorie}}</span>
+  </section>
