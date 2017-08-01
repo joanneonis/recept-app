@@ -47,3 +47,7 @@
         <input type="submit" value="Add Contact">
       </div>
     </form>
+
+		<div *ngIf="id">
+			<a [routerLink]="['../']">terug</a>
+		</div>

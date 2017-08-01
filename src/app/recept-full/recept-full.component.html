@@ -1,5 +1,4 @@
-{{item | json}}
-
+<!-- {{id}} -->
 <article *ngIf="item">
 	 <img [src]="item.afbeeldingurl" alt="">
 		<h1>{{item.titel}}</h1>
@@ -19,4 +18,6 @@
 		<section class="meta">
 			<span class="label">{{item.categorie}}</span>
 		</section>
+
+		<a [routerLink]="['bewerken']">bewerken</a>
 </article>
