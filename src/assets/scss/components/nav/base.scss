@@ -1,4 +1,32 @@
 
 .nav-main {
-    @include fxd(auto,0,0,0);
+		@include fxd(auto,0,0,0);
+		background: color(red);
+		padding: 10px 0;
+
+		a {
+				text-decoration: none;
+				color: white;
+				text-transform: uppercase;
+				font-weight: 600;
+				width: 100%;
+				display: inline-block;
+				text-align: center;
+		}
+
+		strong {
+				width: 100%;
+				display: inline-block;
+				font-size: 0.7em;
+		}
+
+		li {
+				display: block;
+				width: calc(100% / 3);
+				float: left;
+		}
 }
+
+
+
+
