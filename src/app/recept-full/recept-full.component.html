@@ -1,23 +1,39 @@
 <!-- {{id}} -->
 <article *ngIf="item">
 	 <img [src]="item.afbeeldingurl" alt="">
-		<h1>{{item.titel}}</h1>
-		<span>{{item.bereidingstijd}}</span>
-		<span>{{item.wachttijd}}</span>
-		<ul>
-			<li *ngFor="let ingredient of item.ingredienten">
-				<strong>{{ingredient?.naam}}</strong>
-				<span>{{ingredient?.hoeveelheid}}</span>
-				<span>{{ingredient?.eenheid}}</span>
-			</li>
-		</ul>
+		<div class="article-body">
+			<h1>{{item.titel}}</h1>
+			<span class="time">
+				<span class="fa fa-clock-o"></span>
+				<span>{{item.bereidingstijd}}u</span>/
+				<span>{{item.wachttijd}}u</span>
+			</span>
 
-		<p>
-			{{item.bereidingswijze}}
-		</p>
-		<section class="meta">
-			<span class="label">{{item.categorie}}</span>
-		</section>
+			<br><br>
+			<h3>Ingredienten
+				<span class="btn btn-circle btn-xxs">
+					<span class="fa fa-shopping-basket"></span>
+				</span>
+			</h3>
+			<ul class="list">
+				<li *ngFor="let ingredient of item.ingredienten">
+					<strong>{{ingredient?.naam}}</strong>
+					<span>{{ingredient?.hoeveelheid}} <span *ngIf="ingredient?.eenheid != '-'">{{ingredient?.eenheid}}</span></span>
+				</li>
+			</ul>
 
-		<a [routerLink]="['bewerken']">bewerken</a>
+			<p>
+				{{item.bereidingswijze}}
+			</p>
+			<section class="meta">
+				<span class="label">{{item.categorie}}</span>
+			</section>
+
+			<a class="btn btn-primary" [routerLink]="['bewerken']">
+				<span class="fa fa-pencil"></span>
+				bewerken
+			</a>
+		</div>
+
+
 </article>

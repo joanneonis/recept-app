@@ -61,7 +61,7 @@ export class AddReceptComponent implements OnInit {
 	addIngredient() {
 		this.newItem.ingredienten.push({
 			naam: null,
-			hoeveelheid: 0,
+			hoeveelheid: '',
 			eenheid: null
 		});
 	}

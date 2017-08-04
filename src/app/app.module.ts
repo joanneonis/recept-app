@@ -13,10 +13,12 @@ import { ReceptListComponent } from './recept-list/recept-list.component';
 import { ReceptFullComponent } from './recept-full/recept-full.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
 
 const appRoutes: Routes = [
 	{ path: 'recepten', component: ReceptListComponent },
 	{ path: 'toevoegen', component: AddReceptComponent },
+	{ path: 'booschappenlijst', component: ShoppinglistComponent },
 	{ path: 'recept/:id', component: ReceptFullComponent },
 	{ path: 'recept/:id/bewerken', component: AddReceptComponent }
 ];
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     ReceptTeaserComponent,
     ReceptListComponent,
     ReceptFullComponent,
-    NavigationComponent
+    NavigationComponent,
+    ShoppinglistComponent
   ],
   imports: [
     BrowserModule,

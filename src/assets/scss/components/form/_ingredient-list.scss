@@ -1,0 +1,29 @@
+
+.ingredient-list{
+	margin-bottom: 15px;
+
+	li {
+			margin-bottom: 3px;
+			display: inline-block;
+			width: 100%;
+	}
+
+	select {
+			width: 25%;
+			float: left;
+			height: 35px;
+	}
+
+	input {
+			float: left;
+
+			&:nth-child(1) {
+					width: calc(50% - 5px);
+    			margin-right: 5px;
+			}
+			&:nth-child(2) {
+					width: calc(25% - 5px);
+    			margin-right: 5px;
+			}
+	}
+}

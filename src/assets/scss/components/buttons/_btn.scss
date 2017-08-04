@@ -1,0 +1,33 @@
+
+%btn-reset{
+	outline: 0!important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	vertical-align: middle;
+	margin-bottom: 0;
+	text-decoration: none;
+}
+
+.btn{
+		@extend %btn-reset;
+		text-transform: uppercase;
+		font-weight: 700;
+		background: #F6F5F5;
+		color: color(gray, 700);
+		height: auto;
+		padding: 12px 15px;
+		border-radius: 50px;
+}

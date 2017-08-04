@@ -2,4 +2,13 @@
 body{
 	font-family: $body-font;
 	background-color: color(grey, 700);
+	padding-bottom: 70px;
+}
+
+p {
+	color: #4c4c4c;
+	line-height: 1.6;
+	margin-bottom: 15px;
+	font-size: .95em;
+	white-space: pre-line;
 }

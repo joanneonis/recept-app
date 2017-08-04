@@ -1,7 +1,18 @@
 
 app-recept-full {
 	article{
-		padding: 40px;
+		background: #fff;
+		min-height: 100vh;
+
+		.article-body {
+				padding: 20px;
+		}
+
+		.time {
+				color: gray;
+				margin-bottom: 10px;
+				display: inline-block;
+		}
 
 		img{width: 100%; height: auto;}
 	}

@@ -1,41 +1,43 @@
 
 <form (ngSubmit)="add()">
-      <div class="testnaam">
-        <label for="titel">titel:</label>
+      <div class="form-row">
+        <label for="titel">Titel</label>
         <input type="text" name="titel" [(ngModel)]="newItem.titel">
       </div>
-      <div class="testnaam">
-        <label for="afbeeldingurl">afbeeldingurl:</label>
+      <div class="form-row">
+        <label for="afbeeldingurl">Afbeeldingurl</label>
         <input type="text" name="afbeeldingurl" [(ngModel)]="newItem.afbeeldingurl">
       </div>
-      <div class="testnaam">
-        <label for="wachttijd">wachttijd:</label>
-        <input type="time" name="wachttijd" [(ngModel)]="newItem.wachttijd">
+      <div class="form-row">
+        <label for="wachttijd">Wachttijd (uur)</label>
+        <input type="number" name="wachttijd" [(ngModel)]="newItem.wachttijd">
       </div>
-      <div class="testnaam">
-        <label for="bereidingswijze">bereidingstijd:</label>
-        <input type="time" name="bereidingswijze" [(ngModel)]="newItem.bereidingswijze">
+      <div class="form-row">
+        <label for="bereidingstijd">Bereidingstijd (uur)</label>
+        <input type="number" name="bereidingstijd" [(ngModel)]="newItem.bereidingstijd">
       </div>
-      <div class="testnaam">
-        <label for="bereidingswijze">bereidingswijze:</label>
+      <div class="form-row">
+        <label for="bereidingswijze">Bereidingswijze</label>
         <textarea rows="5" name="bereidingswijze" [(ngModel)]="newItem.bereidingswijze"></textarea>
       </div>
-      <div class="testnaam">
-        <h5 *ngIf="newItem.ingredienten.length > 0">test</h5>
-        <ul>
-          <div *ngFor="let ingredient of newItem.ingredienten;let index = index;trackBy:trackByIndex;">
-            <input name="ingredient {{index}}" type="text" [(ngModel)]="ingredient.naam" placeholder="test">
-            <input name="ingredient {{index}}" type="number" [(ngModel)]="ingredient.hoeveelheid" placeholder="test">
+      <div class="form-row">
+        <h5 *ngIf="newItem.ingredienten.length > 0">Ingredienten</h5>
+        <ul class="ingredient-list">
+          <li *ngFor="let ingredient of newItem.ingredienten;let index = index;trackBy:trackByIndex;">
+            <input name="Naam {{index}}" type="text" [(ngModel)]="ingredient.naam" placeholder="Naam">
+            <input name="Aantal {{index}}" type="number" [(ngModel)]="ingredient.hoeveelheid" placeholder="Aantal">
             <select name="eenheid {{index}}" id="type" [(ngModel)]="ingredient.eenheid">
-              <option value="gram">gram</option>
-              <option value="ml">milliliter</option>
+							<option value="-">-</option>
+              <option value="g">gram</option>
+							<option value="ml">milliliter</option>
+							<option value="el">eetlepel</option>
             </select>
-          </div>
+          </li>
         </ul>
-          <button type="button" (click)="addIngredient()">Voeg ingredient toe +</button>
+          <button class="btn btn-primary" type="button" (click)="addIngredient()">Voeg ingredient toe +</button>
       </div>
-      <div class="testnaam">
-        <label for="bereidingswijze">categorie:</label>
+      <div class="form-row">
+        <label for="bereidingswijze">Categorie</label>
         <select name="type" id="type" [(ngModel)]="newItem.categorie">
           <option value="ovenschotel">ovenschotel</option>
           <option value="pasta">pasta</option>
@@ -43,8 +45,8 @@
       </div>
 
 
-      <div class="testnaam">
-        <input type="submit" value="Add Contact">
+      <div class="form-row">
+        <input class="btn btn-primary" type="submit" value="Opslaan">
       </div>
     </form>
 
