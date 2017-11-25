@@ -1,0 +1,24 @@
+
+.search{
+	position: relative;
+
+	input[type="text"] {
+		background: transparent;
+
+		&:focus {
+			outline: none;
+			background: white;
+		}
+	}
+
+	.fa-search {
+		@include abs(0,10px,0,auto);
+		margin: auto;
+		height: 1em;
+		pointer-events: none;
+	}
+}
+
+
+
+

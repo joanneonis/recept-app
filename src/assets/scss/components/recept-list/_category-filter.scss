@@ -1,0 +1,46 @@
+
+ul > .category-filter {
+	background: color(blue);
+	border: 2px solid color(blue);
+	width: calc(100%/5 - 3px);
+	border-radius: 5px;
+	text-align: center;
+	padding: 9px 0;
+	float: left;
+	margin-left: 1.5px;
+	margin-right: 1.5px;
+	transition: background .2s;
+
+	img {
+		height: 2.5em;
+	}
+	svg {
+    height: 2.5em;
+		width: auto;
+
+		g[fill]{
+			transition: fill .2s;
+		}
+	}
+	strong {
+		font-weight: 600;
+		color: white;
+		font-size: .48em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		width: 100%;
+		display: inline-block;
+		transition: color .2s;
+	}
+
+	&.is--active, &:hover{
+		background-color: white;
+		border: 2px solid color(blue, 100);
+
+		strong{color: color(grey, 700)}
+
+		svg g[fill]{
+			fill: color(blue);
+		}
+	}
+}

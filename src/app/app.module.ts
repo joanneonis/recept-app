@@ -14,6 +14,8 @@ import { ReceptFullComponent } from './recept-full/recept-full.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
+import { OwlModule } from 'ng2-owl-carousel';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
 	{ path: 'recepten', component: ReceptListComponent },
@@ -32,13 +34,15 @@ const appRoutes: Routes = [
     ReceptListComponent,
     ReceptFullComponent,
     NavigationComponent,
-    ShoppinglistComponent
+    ShoppinglistComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
 		AngularFireDatabaseModule,
+		OwlModule,
 		RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only

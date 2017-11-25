@@ -7,12 +7,17 @@
 @import 'functions/_import';
 @import 'layout/_import';
 
+@import 'components/utils/_import';
+
 @import 'components/type/_import';
+@import 'components/search/_import';
 @import 'components/nav/_import';
 @import 'components/recept-list/_import';
 @import 'components/recept-teaser/_import';
 @import 'components/recept-full/_import';
+@import 'components/owl/_import';
 
 @import 'components/icons';
+@import 'components/tags';
 @import 'components/form/_import';
 @import 'components/buttons/_import';

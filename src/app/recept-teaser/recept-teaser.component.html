@@ -1,6 +1,11 @@
 
-<article class="recept-teaser" [ngStyle]="{'background-image': 'linear-gradient(to bottom, rgba(19,19,19,0.2) 0%,rgba(19,19,19,0.2) 100%), url('+ recept.afbeeldingurl+')'}">
+<article class="recept-teaser ">
+	<div class="teaser-image" [ngStyle]="{'background-image': 'url('+ recept.afbeeldingurl+')'}"></div>
 	<div class="teaser-content">
-		<h1 class="type">{{recept.titel}}</h1>
+		<span class="time"><span class="fa fa-clock-o"></span> 1u / 30min</span>
+		<h5>{{recept.titel}}</h5>
+		<ul class="tags">
+			<li class="tag">{{recept.categorie}}</li>
+		</ul>
 	</div>
 </article>

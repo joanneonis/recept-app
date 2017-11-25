@@ -1,14 +1,13 @@
 
 .nav-main {
 		@include fxd(auto,0,0,0);
-		background: color(red);
+		background: color(grey, 300);
 		padding: 10px 0;
+		border-top: 1px solid color(grey, 400);
 
 		a {
 				text-decoration: none;
-				color: white;
-				text-transform: uppercase;
-				font-weight: 600;
+				color: color(grey, 500);
 				width: 100%;
 				display: inline-block;
 				text-align: center;
@@ -22,7 +21,7 @@
 
 		li {
 				display: block;
-				width: calc(100% / 3);
+				width: calc(100% / 4);
 				float: left;
 		}
 }
