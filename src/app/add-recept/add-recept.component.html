@@ -1,9 +1,23 @@
 
 
-<canvas id="camera-input" #canvas></canvas>
-<button (click)="save(canvas)"></button>
 
-<form (ngSubmit)="add()">
+
+
+<form (ngSubmit)="save()">
+
+		<a id="selfieBtn" (click)="startVideo()">test</a>
+		<!-- <div id="pickImage">
+			<h6>Pick image</h6>
+			<input type="file" accept="image/*" id="imagePicker">
+		</div> -->
+
+		<div id="divSelfie">
+			<video id="player" autoplay></video>
+			<a id="captureBtn" (click)="captureImage()">Capture</a>
+		</div>
+
+		<img>
+
       <div class="form-row">
         <label for="titel">Titel</label>
         <input type="text" name="titel" [(ngModel)]="newItem.titel">
