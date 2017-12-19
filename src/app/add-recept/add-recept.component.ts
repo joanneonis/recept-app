@@ -1,17 +1,8 @@
-import {
-	Component,
-	OnInit
-} from '@angular/core';
-import {
-	AngularFireDatabase,
-	FirebaseListObservable
-} from 'angularfire2/database';
-import {
-	Subject
-} from 'rxjs/Subject';
-import {
-	ActivatedRoute
-} from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import { Subject} from 'rxjs/Subject';
+import {ActivatedRoute} from '@angular/router';
+import * as firebase from 'firebase';
 
 @Component({
 	selector: 'app-add-recept',
@@ -65,6 +56,24 @@ export class AddReceptComponent implements OnInit {
 			eenheid: null
 		});
 	}
+
+	 save(canvas) {
+		 console.log(canvas);
+    canvas.toBlob(blob => {
+      const storage = firebase.app().storage().ref();
+      const name = (new Date()).getTime() + '.png';
+      const f = storage.child('recept-images/' + name);
+      const task = f.put(blob);
+      task.on('state_changed', function(snapshot) {
+      }, function(error) {
+        console.error('Unable to save image.');
+        console.error(error);
+      }, function() {
+        const url = task.snapshot.downloadURL;
+        console.log('Saved to ' + url);
+      });
+    });
+  }
 
 	trackByIndex(index: number, obj: any): any {
 		return index;
