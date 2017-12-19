@@ -2,10 +2,35 @@
 app-recept-full {
 	article{
 		background: #fff;
-		min-height: 100vh;
+		padding: 0 20px 20px 20px;
+
+		figure {
+			border-radius: 7px;
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+		}
+
+		.article-head {
+			position: relative;
+			padding: 20px 0;
+
+			&:after {
+				background: color(blue, 500);
+				content: "";
+				@include abs(-20vh, -20px, 0, -20px);
+				z-index: 0;
+			}
+
+			* {
+				position: relative;
+				z-index: 1;
+				color: white;
+			}
+
+		}
 
 		.article-body {
-				padding: 20px;
 
 				p{
 					margin-bottom: 40px;
@@ -21,3 +46,4 @@ app-recept-full {
 		img{width: 100%; height: auto;}
 	}
 }
+

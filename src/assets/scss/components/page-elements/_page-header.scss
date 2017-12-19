@@ -1,0 +1,22 @@
+
+
+
+.page-header {
+		text-align: center;
+		padding: 30px 20px 20px 20px;
+		overflow: hidden;
+		position: relative;
+
+		h2 {
+			letter-spacing: 2px;
+		}
+
+		.icon-left{
+			float: left;
+			margin-top: 3px;
+		}
+		.icon-right{
+			float: right;
+			margin-top: 3px;
+		}
+}

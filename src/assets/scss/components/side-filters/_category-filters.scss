@@ -1,0 +1,32 @@
+
+app-search-filters .category-filters{
+	figure {
+    width: 65x;
+    order: 2;
+	}
+
+	li, li.is--active {
+    min-width: 200px;
+    background: transparent;
+    border: none;
+    float: right;
+    clear: both;
+    display: flex;
+    align-items: center;
+
+		svg {
+			width: 2em;
+			height: auto;
+			display: inline-block;
+		}
+
+		&:hover{
+			border: none;
+		}
+ }
+
+ strong {
+	width: 100%;
+	text-align: right;
+ }
+}

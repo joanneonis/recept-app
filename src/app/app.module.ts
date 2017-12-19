@@ -16,9 +16,14 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
 import { OwlModule } from 'ng2-owl-carousel';
 import { SearchComponent } from './search/search.component';
+import { SupriseMeComponent } from './suprise-me/suprise-me.component';
+import { SearchFiltersComponent } from './search-filters/search-filters.component';
+import { CategoryFiltersComponent } from './category-filters/category-filters.component';
 
 const appRoutes: Routes = [
+	{ path: '', component: ReceptListComponent },
 	{ path: 'recepten', component: ReceptListComponent },
+	{ path: 'suprise-me', component: SupriseMeComponent },
 	{ path: 'toevoegen', component: AddReceptComponent },
 	{ path: 'booschappenlijst', component: ShoppinglistComponent },
 	{ path: 'recept/:id', component: ReceptFullComponent },
@@ -35,7 +40,10 @@ const appRoutes: Routes = [
     ReceptFullComponent,
     NavigationComponent,
     ShoppinglistComponent,
-    SearchComponent
+    SearchComponent,
+    SupriseMeComponent,
+    SearchFiltersComponent,
+    CategoryFiltersComponent
   ],
   imports: [
     BrowserModule,

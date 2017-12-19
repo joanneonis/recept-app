@@ -1,38 +1,63 @@
 <!-- {{id}} -->
-<article *ngIf="item">
-	 <img [src]="item.afbeeldingurl" alt="">
-		<div class="article-body">
-			<h1>{{item.titel}}</h1>
-			<span class="time">
-				<span class="fa fa-clock-o"></span>
-				<span>{{item.bereidingstijd}}u</span>/
-				<span>{{item.wachttijd}}u</span>
-			</span>
 
-			<br><br>
-			<h3>Ingredienten
-				<span class="btn btn-circle btn-xxs">
-					<span class="fa fa-shopping-basket"></span>
+<section class="page-header">
+	<span class="fa icon-left fa-long-arrow-left" [routerLink]="['/']"></span>
+	<span class="fa fa-pencil icon-right" [routerLink]="['bewerken']"></span>
+	<h2>Recept</h2>
+</section>
+
+<article *ngIf="item">
+	 <figure>
+		<img [src]="item.afbeeldingurl" alt="">
+	 </figure>
+		<div class="article-body">
+			<div class="article-head">
+				<h1>{{item.titel}}</h1>
+				<span class="time">
+					<span class="fa fa-clock-o"></span>
+					<span>{{item.bereidingstijd}}u</span>
+					<span>{{item.wachttijd}}u</span>
 				</span>
-			</h3>
-			<ul class="list">
-				<li *ngFor="let ingredient of item.ingredienten">
-					<strong>{{ingredient?.naam}}</strong>
-					<span>{{ingredient?.hoeveelheid}} <span *ngIf="ingredient?.eenheid != '-'">{{ingredient?.eenheid}}</span></span>
+
+				<a href="" class="btn btn-white btn-outline">
+					<span class="fa fa-star-o"></span>
+					Favoriet
+				</a>
+			</div>
+
+
+			<ul class="recept-details">
+				<li>
+					<h3>Servings</h3>
+					<div class="recept-details-side">
+						<a href="" class="btn btn-xs btn-circle"><span class="fa fa-plus"></span></a>
+						<a href="" class="btn btn-xs btn-circle"><span class="fa fa-minus"></span></a>
+					</div>
+				</li>
+				<li>
+					<h3>Ingredients</h3>
+					<div class="recept-details-side">
+						<span *ngFor="let ingredient of item.ingredienten">
+							<strong>{{ingredient?.naam}}</strong>
+							<span>{{ingredient?.hoeveelheid}} <span *ngIf="ingredient?.eenheid != '-'">{{ingredient?.eenheid}}</span></span>
+						</span>
+						<a href="" class="btn btn-primary">Plaats in winkelmand</a>
+					</div>
+				</li>
+				<li>
+					<h3>bereidingswijze</h3>
+					<div class="recept-details-side">
+						<p>
+							{{item.bereidingswijze}}
+						</p>
+					</div>
 				</li>
 			</ul>
 
-			<p>
-				{{item.bereidingswijze}}
-			</p>
 			<section class="meta">
 				<span class="label">{{item.categorie}}</span>
 			</section>
 
-			<a class="btn btn-primary" [routerLink]="['bewerken']">
-				<span class="fa fa-pencil"></span>
-				bewerken
-			</a>
 		</div>
 
 

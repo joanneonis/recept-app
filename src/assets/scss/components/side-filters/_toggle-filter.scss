@@ -1,0 +1,33 @@
+
+.toggle-filter{
+	&-inner {
+		border: 2px solid #fff;
+		display: block;
+		border-radius: 50px;
+		overflow: hidden;
+    width: 30px;
+    float: right;
+    margin-right: 11px;
+	}
+
+	a {
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+		padding: 12px 0;
+		color: white;
+
+		&+a {
+			border-top: 2px solid white;
+		}
+
+		&.is--active, &:hover{
+			background-color: white;
+			color: color(blue, 500);
+
+			&:hover{
+				background: rgba(white, .8);
+			}
+		}
+	}
+}

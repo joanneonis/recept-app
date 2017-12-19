@@ -2,19 +2,19 @@
 <nav class="nav-main">
 	<ul>
 		<li>
-			<a routerLinkActive="active" routerLink="/recepten">
+			<a routerLinkActive="active" [routerLink]="'/recepten'">
 				<img class="icon-xs" src="/assets/img/cutlery.svg" alt="">
 				<strong>Recepten</strong>
 			</a>
 		</li>
 		<li>
-			<a routerLinkActive="active">
+			<a routerLinkActive="active" [routerLink]="'/suprise-me'">
 				<img class="icon-xs" src="/assets/img/star.svg" alt="">
 				<strong>Suprise me!</strong>
 			</a>
 		</li>
 		<li>
-			<a routerLinkActive="active" routerLink="/booschappenlijst">
+			<a routerLinkActive="active" [routerLink]="'/booschappenlijst'">
 				<img class="icon-xs" src="/assets/img/list.svg" alt="">
 				<strong>Winkellijst</strong>
 			</a>
