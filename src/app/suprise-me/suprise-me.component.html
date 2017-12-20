@@ -1,3 +1,20 @@
-<p>
-  suprise-me works!
-</p>
+
+<header class="page-header">
+		<h2>Suprise me!</h2>
+</header>
+
+<section class="page page-suprise">
+	<!-- {{items | json}} -->
+
+	<div class="alert">
+		<img src="/assets/img/shake.svg" alt="">
+		<div class="alert-body">
+				<h3 class="alert-title">Tip!</h3>
+				<p class="type">Schud je mobiel voor een nieuwe suggestie</p>
+		</div>
+	</div>
+
+	<div>
+		<app-recept-teaser [recept]="randomItem"></app-recept-teaser>
+	</div>
+</section>
