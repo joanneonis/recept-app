@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-filters',
@@ -10,14 +10,17 @@ export class SearchFiltersComponent implements OnInit {
 	SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 	open = false;
 
-  public someValue =  5;
+  public someValue =  180;
   public someMin =  0;
   public someMax =  180;
   public someStep =  1;
   public someRange = [3, 7];
   public someRange2 = [10, 15];
   public someRange3 = [2, 8];
-  public simeTime =  0;
+	public simeTime =  0;
+	public step = 20;
+
+	@Output() onFilterChange: EventEmitter<number[]> = new EventEmitter<number[]>();
 
   constructor() { }
 
@@ -25,7 +28,9 @@ export class SearchFiltersComponent implements OnInit {
 	}
 
 	onChange(value: any) {
-    // console.log('Value changed to', value);
+		// console.log('Value changed to', value);
+
+		this.onFilterChange.emit([0, this.someValue]);
   }
 
 	swipe(currentIndex: number, action = this.SWIPE_ACTION.RIGHT) {

@@ -4,18 +4,18 @@
 		<app-search></app-search>
 </header>
 
-<app-search-filters></app-search-filters>
+<app-search-filters (onFilterChange)="handleFilterChange($event)"></app-search-filters>
 
 <a routerLink="/toevoegen" class="btn btn-fab btn-circle">
 	<span class="fa fa-plus"></span>
 </a>
 
 <section class="recept-overview">
-	<owl-carousel
+	<owl-carousel #owlCarousel class="recept-owl-carousel"
 	[options]="{items: 2, dots: true, navigation: true}"
 	[items]="items"
 	[carouselClasses]="['owl-theme', 'row', 'sliding']">
-		<a class="item" *ngFor="let item of items" [routerLink]="['/recept', item.$key]">
+		<a class="item" *ngFor="let item of items | rangeFilter: filter" [routerLink]="['/recept', item.$key]">
 			<app-recept-teaser [recept]="item"></app-recept-teaser>
 		</a>
 	</owl-carousel>
