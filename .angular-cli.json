@@ -21,10 +21,12 @@
 			"styles": [
 				"../node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
 				"../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+				"../node_modules/nouislider/distribute/nouislider.min.css",
 					"assets/scss/all.scss"
 			],
       "scripts": [
-				"../node_modules/jquery/dist/jquery.js"
+				"../node_modules/jquery/dist/jquery.js",
+				"../node_modules/hammerjs/hammer.min.js"
 			],
       "environmentSource": "environments/environment.ts",
       "environments": {

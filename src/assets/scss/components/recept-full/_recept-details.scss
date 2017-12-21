@@ -19,5 +19,16 @@
 
 	.recept-details-side {
 		flex: 2;
+
+		> span{
+				color: #4c4c4c;
+				line-height: 1.6;
+				margin-bottom: 15px;
+				font-size: .95em;
+		}
+
+		> .btn {
+			margin-top: 10px;
+		}
 	}
 }

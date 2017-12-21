@@ -1,5 +1,5 @@
 
-app-search-filters {
+.search-filters-side {
 	position: fixed;
 	left: 0;
 	right: auto;
@@ -25,7 +25,7 @@ app-search-filters {
     letter-spacing: 1px;
 	}
 
-	&:hover{
+	&.open{
 		width: 210px;
 	}
 }

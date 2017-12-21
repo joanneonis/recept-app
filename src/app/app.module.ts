@@ -19,6 +19,9 @@ import { SearchComponent } from './search/search.component';
 import { SupriseMeComponent } from './suprise-me/suprise-me.component';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { CategoryFiltersComponent } from './category-filters/category-filters.component';
+import { NouisliderModule, NouisliderComponent } from 'ng2-nouislider';
+import { RangeFilterPipe } from './pipes/range-filter.pipe';
+import 'hammerjs';
 
 const appRoutes: Routes = [
 	{ path: '', component: ReceptListComponent },
@@ -43,7 +46,8 @@ const appRoutes: Routes = [
     SearchComponent,
     SupriseMeComponent,
     SearchFiltersComponent,
-    CategoryFiltersComponent
+    CategoryFiltersComponent,
+    RangeFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -51,13 +55,17 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
 		AngularFireDatabaseModule,
 		OwlModule,
+		NouisliderModule,
 		RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only
     )
   ],
   providers: [],
-  bootstrap: [AppComponent],
+	bootstrap: [AppComponent],
+	exports: [
+    NouisliderComponent
+  ],
 })
 
 export class AppModule { }

@@ -1,5 +1,5 @@
 
-<section class="search-filters-side">
+<section class="search-filters-side" (swiperight)="swipe(idx, $event.type)" (swipeleft)="swipe(idx, $event.type)" [class.open]="open">
 	<span class="filter-title">Filters</span>
 
 	<ul class="side-filter clean-list category-filters">
@@ -79,6 +79,16 @@
 	</ul>
 
 	<div class="side-filter slide-filter">
+		<!-- <nouislider
+			[min]="0"
+			[max]="100"
+			[step]="0.05"
+			[(ngModel)]="PreperationTime">
+		</nouislider> -->
+
+		<!-- <code>someValue: {{ someValue | json }}, someMin: {{ someMin | json }}, someMax: {{ someMax | json }}, someStep: {{ someStep | json }}</code> -->
+
+<nouislider [min]="someMin" [max]="someMax" [step]="someStep" [(ngModel)]="someValue" (ngModelChange)="onChange($event)"></nouislider>
 
 	</div>
 	<div class="side-filter toggle-filter">
@@ -87,4 +97,7 @@
 			<a>€€</a>
 		</div>
 	</div>
+
+	{{ someValue | json }}
 </section>
+
