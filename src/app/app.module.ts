@@ -22,6 +22,8 @@ import { CategoryFiltersComponent } from './category-filters/category-filters.co
 import { NouisliderModule, NouisliderComponent } from 'ng2-nouislider';
 import { RangeFilterPipe } from './pipes/range-filter.pipe';
 import 'hammerjs';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 
 const appRoutes: Routes = [
 	{ path: '', component: ReceptListComponent },
@@ -56,6 +58,7 @@ const appRoutes: Routes = [
 		AngularFireDatabaseModule,
 		OwlModule,
 		NouisliderModule,
+		environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
 		RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only

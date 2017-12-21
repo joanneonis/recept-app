@@ -9,6 +9,7 @@ export class SearchFiltersComponent implements OnInit {
 	PreperationTime;
 	SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 	open = false;
+	idx;
 
   public someValue =  180;
   public someMin =  0;
