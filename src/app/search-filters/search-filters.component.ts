@@ -1,11 +1,17 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+
+import { Component, OnInit, EventEmitter, Output, ViewChild, QueryList, AfterViewInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-search-filters',
   templateUrl: './search-filters.component.html',
   styleUrls: ['./search-filters.component.css']
 })
-export class SearchFiltersComponent implements OnInit {
+
+
+export class SearchFiltersComponent implements AfterViewInit {
+	@ViewChild('sliderRef') sliderRef;
+
 	PreperationTime;
 	SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 	open = false;
@@ -21,23 +27,32 @@ export class SearchFiltersComponent implements OnInit {
 	public simeTime =  0;
 	public step = 20;
 
+	SliderConfig: any = {
+		orientation: 'vertical',
+		connect: true,
+		behaviour: 'drag',
+	};
+
 	@Output() onFilterChange: EventEmitter<number[]> = new EventEmitter<number[]>();
 
   constructor() { }
 
-  ngOnInit() {
-	}
+  // ngOnInit() {
+
+	// }
 
 	onChange(value: any) {
 		// console.log('Value changed to', value);
 
 		this.onFilterChange.emit([0, this.someValue]);
-  }
+	}
+
+	ngAfterViewInit() {
+		console.log(this.sliderRef.slider);
+
+	}
 
 	swipe(currentIndex: number, action = this.SWIPE_ACTION.RIGHT) {
-			// if (currentIndex > this.avatars.length || currentIndex < 0) {
-			// 	return;
-			// }
 
 			// swipe right, next avatar
 			if (action === this.SWIPE_ACTION.RIGHT) {

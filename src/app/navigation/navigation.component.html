@@ -20,22 +20,9 @@
 			</a>
 		</li>
 		<li>
-			<a routerLinkActive="active">
+			<a routerLinkActive="active" [routerLink]="'/profile'">
 				<img class="icon-xs" src="/assets/img/chef.svg" alt="">
 				<strong>Profile</strong>
-			</a>
-		</li>
-		<li>
-			<a (click)="requestPermission()">
-				<img class="icon-xs" src="/assets/img/chef.svg" alt="">
-				<strong>NOTIFY</strong>
-			</a>
-		</li>
-
-		<li>
-			<a (click)="send()">
-				<img class="icon-xs" src="/assets/img/chef.svg" alt="">
-				<strong>STUUR</strong>
 			</a>
 		</li>
 	</ul>

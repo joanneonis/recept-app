@@ -43,6 +43,23 @@ export class ReceptFullComponent implements OnInit, OnDestroy {
   }
 
 
+	 share() {
+		let windowVar: any;
 
+		windowVar = window.navigator;
+
+		if (!('share' in navigator)) {
+			alert('Web Share API not supported.');
+			return;
+		}
+
+		windowVar.share({
+				title: 'testbericht',
+				text: 'Berichtekst',
+				url: 'https://receptenapp-fe43f.firebaseapp.com'
+			})
+			.then(() => console.log('Successful share'))
+			.catch(error => console.log('Error sharing:', error));
+	}
 }
 

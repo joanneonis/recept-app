@@ -1,0 +1,72 @@
+$slider-height: 200px;
+
+.noUi-target:after {
+	width: 0;
+	height: 0;
+	background: transparent;
+	box-shadow: none;
+	border-top: 7px solid transparent;
+	border-left: 60px solid rgba(white, .8);
+	border-bottom: 7px solid transparent;
+	content: "";
+	position: absolute;
+	top: 0;
+}
+
+.noUi-target {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	float: right;
+	margin-right: 19px;
+}
+.noUi-vertical, .noUi-horizontal{
+	.noUi-handle {
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		border: none;
+		box-shadow: 0px 0px 0px 4px rgba(white, .8);
+		left: -3px;
+
+		&:focus{
+			outline: none;
+		}
+
+		&:after,
+		&:before {
+			left: 8px;
+			height: 10px;
+		}
+
+		&:after {
+			left: 12px;
+		}
+	}
+}
+
+.noUi-vertical {
+	height: 150px;
+
+	&:after{
+		width: 0;
+		height: 0;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-top: 150px solid rgba(white, .8);
+	}
+
+
+	.noUi-handle:after,
+	.noUi-handle:before {
+		left: 2px;
+    height: 2px;
+    top: 7px;
+	}
+
+	.noUi-handle:after {
+		top: 12px;
+	}
+}
+
+

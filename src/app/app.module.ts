@@ -27,6 +27,7 @@ import { MessagingService } from './service/messaging.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
 	{ path: '', component: ReceptListComponent },
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
 	{ path: 'toevoegen', component: AddReceptComponent },
 	{ path: 'booschappenlijst', component: ShoppinglistComponent },
 	{ path: 'recept/:id', component: ReceptFullComponent },
-	{ path: 'recept/:id/bewerken', component: AddReceptComponent }
+	{ path: 'recept/:id/bewerken', component: AddReceptComponent },
+	{ path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     SupriseMeComponent,
     SearchFiltersComponent,
     CategoryFiltersComponent,
-    RangeFilterPipe
+    RangeFilterPipe,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
