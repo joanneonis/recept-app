@@ -1,0 +1,27 @@
+
+
+.img-row {
+
+	&-inner{
+		display: flex;
+		align-items: center;
+
+		& >span{
+			margin: 0 10px;
+		}
+	}
+
+	.chosen-img{
+		margin-top: 10px;
+
+		span{
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.img-url {
+	float: right;
+}
+

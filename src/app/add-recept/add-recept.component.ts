@@ -20,6 +20,8 @@ export class AddReceptComponent implements OnInit {
 	items: Array<any> = [];
 	videoPlayer;
 	imageBlob;
+	takingPhoto;
+	photoFilled = false;
 
 	id: string;
 	private sub: any;
@@ -34,7 +36,6 @@ export class AddReceptComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		// this.$items.subscribe(a => { this.items = a; });
 
 		this.sub = this.route.params.subscribe(params => {
 			this.id = params['id'];
@@ -71,26 +72,17 @@ export class AddReceptComponent implements OnInit {
 	if ('mediaDevices' in navigator) {
 		navigator.mediaDevices.getUserMedia({ video: true })
 			.then(function(stream){
-
-				// it will automatically ask for permission
-				// if the user denies, it will give back an error
-
-				// change the following querySelector to the id of the
-				// object where you want to send the stream of the video
 				that.videoPlayer = document.querySelector('#player');
 				that.videoPlayer.srcObject = stream;
-
-				// $('#divSelfie').css('display', 'block');
 
 				console.log(that.videoPlayer);
 
 			})
 			.catch(function(error){
-				// all errors here
 				console.log('There was an error', error);
-				// then show the image picker, because the camera doesn't work
-				// $('#pickImage').css('display', 'block')
 			});
+
+			that.takingPhoto = true;
 	}
 
 }
@@ -98,6 +90,7 @@ export class AddReceptComponent implements OnInit {
 	 const that = this;
 	navigator.mediaDevices.getUserMedia({ video: true })
 			.then(function(stream){
+				that.photoFilled = true;
 				const mediaStreamTrack = stream.getVideoTracks()[0];
 			  const imageCapture = new ImageCapture.ImageCapture(mediaStreamTrack);
 				const img = document.querySelector('img');
@@ -106,14 +99,18 @@ export class AddReceptComponent implements OnInit {
 						that.imageBlob = blob;
 						img.src = URL.createObjectURL(blob);
 						img.onload = () => { URL.revokeObjectURL(img.src); };
+
+						that.takingPhoto = false;
+						that.stopStreaming();
 					})
 					.catch(error => console.error('takePhoto() error:', error));
 		});
+
+
 }
 
  pickImage() {
 	this.stopStreaming();
-	// $('#pickImage').css('display', 'block');
 }
  stopStreaming() {
 	if (this.videoPlayer) {
@@ -122,31 +119,30 @@ export class AddReceptComponent implements OnInit {
 				track.stop(); // stop all streams
 			});
 	}
-	// $('#divSelfie').css('display', 'none');
 }
 
 
 	save() {
 		const that = this;
 
-		 const storage = this.fb.storage().ref();
-		 const name = (new Date()).getTime() + '.png';
-		 const f = storage.child('recept-images/' + name);
-			 // blob hier
-		 const task = f.put(this.imageBlob);
+		const storage = this.fb.storage().ref();
+		const name = (new Date()).getTime() + '.png';
+		const f = storage.child('recept-images/' + name);
+			// blob hier
+		const task = f.put(this.imageBlob);
 
-		 task.on('state_changed', function(snapshot) {
-		 }, function(error) {
-			 console.error('Unable to save image.');
-			 console.error(error);
-		 }, function() {
-				that.stopStreaming();
-			 const url = task.snapshot.downloadURL;
-			 console.log('Saved to ' + url);
-			 that.newItem.afbeeldingurl = url;
+		task.on('state_changed', function(snapshot) {
+		}, function(error) {
+			console.error('Unable to save image.');
+			console.error(error);
+		}, function() {
+			that.stopStreaming();
+			const url = task.snapshot.downloadURL;
+			console.log('Saved to ' + url);
+			that.newItem.afbeeldingurl = url;
 
-			 that.add();
-		 });
+			that.add();
+		});
  }
 
 	trackByIndex(index: number, obj: any): any {

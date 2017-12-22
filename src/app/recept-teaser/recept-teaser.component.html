@@ -2,7 +2,7 @@
 <article class="recept-teaser">
 	<div class="teaser-image" [ngStyle]="{'background-image': 'url('+ recept.afbeeldingurl+')'}"></div>
 	<div class="teaser-content">
-		<span class="time"><span class="fa fa-clock-o"></span> 1u / 30min</span>
+		<span class="time"><span class="fa fa-clock-o"></span> {{recept.bereidingstijd}}min / {{recept.wachttijd}}min</span>
 		<h5>{{recept.titel}}</h5>
 		<ul class="tags">
 			<li class="tag">{{recept.categorie}}</li>
