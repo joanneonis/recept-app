@@ -18,6 +18,11 @@
 			display: block;
 			margin-bottom: 10px;
 		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 }
 
@@ -25,3 +30,25 @@
 	float: right;
 }
 
+
+.take-photo {
+	@include fxd(0,0,0,0);
+	z-index: 2;
+	background: black;
+
+	video {
+		width: 100%;
+		height: auto;
+		@include centralize;
+	}
+}
+
+
+
+a#captureBtn {
+	position: fixed;
+	bottom: 20px;
+	left: 10px;
+	right: 10px;
+	z-index: 3;
+}

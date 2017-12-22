@@ -135,6 +135,7 @@ export class AddReceptComponent implements OnInit {
 		}, function(error) {
 			console.error('Unable to save image.');
 			console.error(error);
+			that.add();
 		}, function() {
 			that.stopStreaming();
 			const url = task.snapshot.downloadURL;
