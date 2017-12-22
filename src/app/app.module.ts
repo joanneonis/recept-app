@@ -23,7 +23,10 @@ import { NouisliderModule, NouisliderComponent } from 'ng2-nouislider';
 import { RangeFilterPipe } from './pipes/range-filter.pipe';
 import 'hammerjs';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MessagingService } from './service/messaging.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
 	{ path: '', component: ReceptListComponent },
@@ -53,7 +56,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+		FormsModule,
+		HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
 		AngularFireDatabaseModule,
 		OwlModule,
@@ -64,7 +68,7 @@ const appRoutes: Routes = [
       // { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [MessagingService, AngularFireAuth],
 	bootstrap: [AppComponent],
 	exports: [
     NouisliderComponent

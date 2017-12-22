@@ -1,5 +1,5 @@
 {
-  "index": "/index.html",
+	"index": "/index.html",
   "assetGroups": [{
     "name": "app",
     "installMode": "prefetch",
@@ -19,33 +19,8 @@
     "updateMode": "prefetch",
     "resources": {
       "files": [
-        "/assets/**"
+        "/assets/img/**"
       ]
-    }
-  }],
-  "dataGroups": [{
-    "name": "api-freshness",
-    "urls": [
-      "/new"
-    ],
-    "cacheConfig": {
-      "maxSize": 100,
-      "maxAge": "1h",
-      "timeout": "10s",
-      "strategy": "freshness"
-    }
-  }, {
-    "name": "api-performance",
-    "urls": [
-      "/",
-      "/jobs",
-      "/show",
-      "/ask"
-    ],
-    "cacheConfig": {
-      "maxSize": 100,
-      "maxAge": "1d",
-      "strategy": "performance"
     }
   }]
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessagingService } from '../service/messaging.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private messaging: MessagingService) { }
 
   ngOnInit() {
-  }
+	}
+
+	requestPermission() {
+		this.messaging.getPermission();
+	}
+
+	send() {
+		this.messaging.send('Bericht', 'Goed bericht').subscribe(a => console.log(a));
+	}
 
 }
