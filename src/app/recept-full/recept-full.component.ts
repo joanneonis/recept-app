@@ -63,3 +63,4 @@ export class ReceptFullComponent implements OnInit, OnDestroy {
 	}
 }
 
+//
